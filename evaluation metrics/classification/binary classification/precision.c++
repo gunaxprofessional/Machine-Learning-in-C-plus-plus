@@ -1,6 +1,8 @@
 #include <iostream>
 #include <iomanip>
 
+using namespace std;
+
 int main()
 {
     int y_true[10] = {1, 0, 0, 0, 0, 1, 1, 0, 0, 0};
@@ -26,16 +28,16 @@ int main()
         }
     }
 
-    std::cout << "TP: " << TP << ", FP: " << FP << ", FN: " << FN << ", TN: " << TN << std::endl;
+    cout << "TP: " << TP << ", FP: " << FP << ", FN: " << FN << ", TN: " << TN << endl;
 
     if (TN + FP > 0)
     {
-        std::cout << "precision: " << std::fixed << std::setprecision(4)
-                  << static_cast<float>(TP) / (TP + FP) << std::endl;
+        cout << "precision: " << fixed << setprecision(4)
+             << static_cast<float>(TP) / (TP + FP) << endl;
     }
     else
     {
-        std::cout << "precision: Undefined (TN + FP = 0)" << std::endl;
+        cout << "precision: Undefined (TN + FP = 0)" << endl;
     }
 
     return 0;

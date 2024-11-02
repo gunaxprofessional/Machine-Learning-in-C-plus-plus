@@ -1,6 +1,8 @@
 #include <iostream>
 #include <iomanip>
 
+using namespace std;
+
 int main()
 {
     int y_true[10] = {1, 0, 0, 0, 0, 1, 1, 0, 0};
@@ -16,8 +18,11 @@ int main()
         }
     }
 
-    std::cout << std::fixed << std::setprecision(4)
-              << static_cast<float>(total_matches) / total_sample << std::endl;
+    cout << "Total Samples: " << total_sample << "\n"
+         << "Total Matches: " << total_matches << endl;
+
+    cout << "Accuarcy: " << fixed << setprecision(4)
+         << static_cast<float>(total_matches) / total_sample << endl;
 
     return 0;
 }
