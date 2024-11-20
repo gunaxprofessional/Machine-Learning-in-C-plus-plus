@@ -62,12 +62,15 @@ int main()
         }
     }
 
+    float numerator = 0, denominator = 0;
+
     for (int i = 0; i < uniqueNumbers.size(); i++)
     {
-        precision += (TP[i] / (TP[i] + FP[i]));
+        numerator += TP[i];
+        denominator += (TP[i] + FP[i]);
     }
 
-    cout << setprecision(10) << precision / uniqueNumbers.size() << endl;
+    cout << setprecision(5) << numerator / denominator << endl;
 
     return 0;
 }

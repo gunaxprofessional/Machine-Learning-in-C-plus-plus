@@ -30,12 +30,12 @@ int main()
 
     vector<int> uniqueNumbers = getUniqueNumbersOrdered(y_true, size);
 
-    float precision = 0;
+    double recall = 0;
 
-    float *TP = (float *)calloc(uniqueNumbers.size(), sizeof(float));
-    float *TN = (float *)calloc(uniqueNumbers.size(), sizeof(float));
-    float *FP = (float *)calloc(uniqueNumbers.size(), sizeof(float));
-    float *FN = (float *)calloc(uniqueNumbers.size(), sizeof(float));
+    double *TP = (double *)calloc(uniqueNumbers.size(), sizeof(double));
+    double *TN = (double *)calloc(uniqueNumbers.size(), sizeof(double));
+    double *FP = (double *)calloc(uniqueNumbers.size(), sizeof(double));
+    double *FN = (double *)calloc(uniqueNumbers.size(), sizeof(double));
 
     for (int i = 0; i < size; i++)
     {
@@ -64,10 +64,10 @@ int main()
 
     for (int i = 0; i < uniqueNumbers.size(); i++)
     {
-        precision += (TP[i] / (TP[i] + FP[i]));
+        recall += (TP[i] / (TP[i] + FN[i]));
     }
 
-    cout << setprecision(10) << precision / uniqueNumbers.size() << endl;
+    cout << setprecision(20) << recall / uniqueNumbers.size() << endl;
 
     return 0;
 }
