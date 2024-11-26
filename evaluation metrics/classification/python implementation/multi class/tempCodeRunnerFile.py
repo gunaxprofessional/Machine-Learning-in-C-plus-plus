@@ -1,0 +1,1 @@
+f1_score = f1_score(y_true, y_pred, average='weighted')
